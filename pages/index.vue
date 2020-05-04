@@ -1,48 +1,38 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
-    >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          土曜の朝、布団を干す
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <v-container fluid>
+    <template v-if="posts.length">
+      <ul v-for="(post, i) in posts" :key="i">
+      {{post.fields.image.fields.file}}
+        <li>{{ post.fields.title }}</li>
+        <ul>
+          <v-img
+            :src="post.fields.image.fields.file.url"
+            :alt="post.fields.image.fields.file.title"
+            :aspect-ratio="16/9"
+            max-width="400"
+            max-height="225"/>
+          <li>{{ post.fields.body }}</li>
+          <li>{{ post.fields.publishDate }}</li>
+        </ul>
+      </ul>
+    </template>
+    <template v-else>
+      投稿された記事はありません。
+    </template>
+  </v-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import client from '~/plugins/contentful'
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  async asyncData({ env }) {
+    let posts = []
+    await client.getEntries({
+      content_type: env.CTF_BLOG_POST_TYPE_ID,
+      order: '-fields.publishDate'
+    }).then(res => (posts = res.items)).catch(console.error)
+    return { posts }
   }
 }
 </script>
