@@ -1,48 +1,80 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
+  <v-container fluid>
+    <v-row
+      justify="center"
     >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          土曜の朝、布団を干す
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
+      <v-col
+        cols="12"
+        sm="11"
+        md="10"
+        xl="8"
+      >
+        <v-row v-if="posts.length">
+          <v-col
+            v-for="(post, i) in posts"
+            :key="i"
+            cols="12"
+            sm="6"
+            lg="4"
+            xl="3"
           >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+            <v-card
+              max-width="400"
+              class="mx-auto"
+            >
+              <v-img
+                :src="post.fields.image.fields.file.url"
+                :alt="post.fields.image.fields.title"
+                :aspect-ratio="16/9"
+                max-height="200"
+                class="white--text"
+              >
+                <v-card-title class="align-end fill-height font-weight-bold">
+                  {{ post.fields.title }}
+                </v-card-title>
+              </v-img>
+
+              <v-card-text>
+                {{ post.fields.publishDate }}
+              </v-card-text>
+
+              <v-list-item three-line style="min-height: unset;">
+                <v-list-item-subtitle>
+                  {{ post.fields.body }}
+                </v-list-item-subtitle>
+              </v-list-item>
+
+              <v-card-actions>
+                <v-spacer />
+                <v-btn
+                  text
+                  color="primary"
+                >
+                  この記事をみる
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+        <div v-else class="text-center">
+          投稿された記事はありません。
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import client from '~/plugins/contentful'
 
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  async asyncData({ env }) {
+    let posts = []
+    await client.getEntries({
+      content_type: env.CTF_BLOG_POST_TYPE_ID,
+      order: '-fields.publishDate'
+    }).then(res => (posts = res.items)).catch(console.error)
+    return { posts }
   }
 }
 </script>
