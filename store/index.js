@@ -9,5 +9,8 @@ export const getters = {
         }
     } 
     else return { url: defaultEyeCatch, title: 'defaultImage' }
+  },
+  draftChip: () => (post) => {
+    if (!post.fields.publishDate) return 'draftChip'
   }
 }

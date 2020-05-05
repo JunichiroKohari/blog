@@ -2,15 +2,15 @@
   <v-container fluid>
     <template v-if="currentPost">
       {{ currentPost.fields.title }}
-      <v-img
+      <!-- <v-img
         :src="currentPost.fields.image.fields.file.url"
         :alt="currentPost.fields.image.fields.title"
         :aspect-ratio="16/9"
         width="700"
         height="400"
         class="mx-auto"
-      />
-      {{ currentPost.fields.publishDate }}<br>
+      /> -->
+      {{currentPost.fields.publishDate}}
       {{ currentPost.fields.body }}
     </template>
 
