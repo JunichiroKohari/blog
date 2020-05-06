@@ -35,6 +35,14 @@ export default {
     'plugins/contentful'
   ],
   /*
+  ** Nuxt.js middleware
+  */
+  router: {
+    middleware: [
+      'getContentful'
+    ]
+  },
+  /*
   ** Nuxt.js dev-modules
   */
   buildModules: [

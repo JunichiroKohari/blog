@@ -68,7 +68,7 @@
 
 <script>
 import client from '~/plugins/contentful'
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 import draftChip from '~/components/posts/draftChip'
 
 export default {
@@ -84,7 +84,8 @@ export default {
     draftChip
   },
   computed: {
-    ...mapGetters(['setEyeCatch', 'draftChip']),
+    ...mapState(['posts']),  
+    ...mapGetters(['setEyeCatch', 'draftChip', 'linkTo']),
     linkTo: () => (obj) => {
       return {
         name: 'posts-slug',
