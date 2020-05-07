@@ -29,10 +29,26 @@
                 max-height="200"
                 class="white--text"
               >
-                <v-card-title class="align-end fill-height font-weight-bold">
-                  {{ post.fields.title }}
-                </v-card-title>
+                <v-card-text>
+                  <v-chip
+                    small
+                    dark
+                    :color="categoryColor(post.fields.category)"
+                    to="#"
+                    class="font-weight-bold"
+                  >
+                    {{ post.fields.category.fields.name }}
+                  </v-chip>
+                </v-card-text>
               </v-img>
+
+              <v-card-title>
+                <nuxt-link
+                  :to="linkTo('posts', post)"
+                >
+                  {{ post.fields.title }}
+                </nuxt-link>
+              </v-card-title>
 
               <v-card-text>
                 {{ post.fields.publishDate }}
@@ -91,6 +107,16 @@ export default {
         name: 'posts-slug',
         params: {
           slug: obj.fields.slug
+        }
+      }
+    },
+    categoryColor() {
+      return (category) => {
+        switch (category.fields.name) {
+          case 'RubyOnRails': return '#C73A31'
+          case 'Nuxt.js': return '#236244'
+          case 'コラム': return 'primary'
+          default: return 'grey darken-3'
         }
       }
     }
