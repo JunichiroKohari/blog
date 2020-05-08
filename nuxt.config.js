@@ -32,7 +32,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    'plugins/contentful'
+    'plugins/contentful',
+    'plugins/components'
   ],
   /*
   ** Nuxt.js middleware

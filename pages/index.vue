@@ -34,7 +34,7 @@
                     small
                     dark
                     :color="categoryColor(post.fields.category)"
-                    to="#"
+                    :to="linkTo('categories', post.fields.category)"
                     class="font-weight-bold"
                   >
                     {{ post.fields.category.fields.name }}
@@ -44,7 +44,7 @@
 
               <v-card-title>
                 <nuxt-link
-                  :to="linkTo(post)"
+                  :to="linkTo('posts', post)"
                 >
                   {{ post.fields.title }}
                 </nuxt-link>
@@ -66,7 +66,7 @@
                 <v-btn
                   text
                   color="primary"
-                  :to="linkTo(post)"
+                  :to="linkTo('posts', post)"
                 >
                   この記事をみる
                 </v-btn>
@@ -102,14 +102,6 @@ export default {
   computed: {
     ...mapState(['posts']),  
     ...mapGetters(['setEyeCatch', 'draftChip', 'linkTo']),
-    linkTo: () => (obj) => {
-      return {
-        name: 'posts-slug',
-        params: {
-          slug: obj.fields.slug
-        }
-      }
-    },
     categoryColor() {
       return (category) => {
         switch (category.fields.name) {
