@@ -2,7 +2,8 @@ import defaultEyeCatch from '~/assets/images/blog_eyecatch.png'
 import client from '~/plugins/contentful'
 
 export const state = () => ({
-    posts: []
+    posts: [],
+    categories: []
 })
 
 export const getters = {
@@ -26,10 +27,12 @@ export const getters = {
 export const mutations = {
     setPosts(state, payload) {
         state.posts = payload
+    },
+    setCategories(state, payload) {
+        state.categories = payload
     }
 }
 
-// 追記
 export const actions = {
     async getPosts({ commit }) {
         await client.getEntries({
@@ -40,5 +43,13 @@ export const actions = {
             commit('setPosts', res.items)
         )
         .catch(console.error)
+    },
+    async getCategories({ commit }) {
+        await client.getEntries({
+            content_type: 'category',
+            order: 'fields.sort'
+        }).then(res =>
+            commit('setCategories', res.items)
+        ).catch(console.error)
     }
 }
