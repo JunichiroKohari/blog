@@ -44,7 +44,7 @@
 
               <v-card-title>
                 <nuxt-link
-                  :to="linkTo('posts', post)"
+                  :to="linkTo(post)"
                 >
                   {{ post.fields.title }}
                 </nuxt-link>
@@ -113,9 +113,9 @@ export default {
     categoryColor() {
       return (category) => {
         switch (category.fields.name) {
-          case 'RubyOnRails': return '#C73A31'
-          case 'Nuxt.js': return '#236244'
-          case 'コラム': return 'primary'
+          case 'programming': return '#C73A31'
+          case 'eating': return '#236244'
+          case 'training': return 'primary'
           default: return 'grey darken-3'
         }
       }
