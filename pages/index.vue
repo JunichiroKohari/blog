@@ -68,7 +68,7 @@
                   <v-chip
                     v-for="(tag) in post.fields.tags"
                     :key="tag.sys.id"
-                    to="#"
+                    :to="linkTo('tags', tag)"
                     small
                     label
                     outlined
