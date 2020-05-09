@@ -21,6 +21,14 @@ export const getters = {
   },
   linkTo: () => (name, obj) => {
     return { name: `${name}-slug`, params: { slug: obj.fields.slug } }
+  },
+  relatedPosts: state => (category) => {
+    const posts = []
+    for (let i = 0; i < state.posts.length; i++) {
+      const catId = state.posts[i].fields.category.sys.id
+      if (category.sys.id === catId) posts.push(state.posts[i])
+    }
+    return posts
   }
 }
 
