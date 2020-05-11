@@ -1,17 +1,36 @@
 <template>
   <div>
     <breadcrumbs :add-items="addBreads" />
-    <div
-      v-for="(tag, i) in tags"
-      :key="i"
-    >
-      <nuxt-link
-        :to="linkTo('tags', tag)"
+
+    <v-container>
+      <v-row
+        justify="center"
       >
-        {{ tag.fields.name }}
-        {{ postCount(tag) }}
-      </nuxt-link>
-    </div>
+        <v-col
+          cols="12"
+          sm="10"
+          md="8"
+        >
+          <v-card>
+            <v-card-title>
+              <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+              />
+            </v-card-title>
+
+            <v-data-table
+              :headers="headers"
+              :items="tableItems"
+              :search="search"
+            ></v-data-table>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -19,16 +38,21 @@
 import { mapState, mapGetters } from 'vuex'
 
 export default {
+  data: () => ({
+    search: '',
+    headers: [
+      { text: 'タグ' },
+      { text: '投稿数' }
+    ]
+  }),
   computed: {
     ...mapState(['tags']),
     ...mapGetters(['linkTo']),
-    postCount() {
-      return (currentTag) => {
-        return this.$store.getters.associatePosts(currentTag).length
-      }
-    },
     addBreads() {
       return [{ icon: 'mdi-tag-outline', text: 'タグ一覧', to: '/tags', disabled: true, iconColor: 'grey' }]
+    },
+    tableItems() {
+      return []
     }
   }
 }
