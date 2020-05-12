@@ -29,13 +29,30 @@
                 max-height="200"
                 class="white--text"
               >
-                <v-card-title class="align-end fill-height font-weight-bold">
-                  {{ post.fields.title }}
-                </v-card-title>
+                <v-card-text>
+                  <v-chip
+                    small
+                    dark
+                    :color="categoryColor(post.fields.category)"
+                    :to="linkTo('categories', post.fields.category)"
+                    class="font-weight-bold"
+                  >
+                    {{ post.fields.category.fields.name }}
+                  </v-chip>
+                </v-card-text>
               </v-img>
+
+              <v-card-title>
+                <nuxt-link
+                  :to="linkTo('posts', post)"
+                >
+                  {{ post.fields.title }}
+                </nuxt-link>
+              </v-card-title>
 
               <v-card-text>
                 {{ post.fields.publishDate }}
+                <span :is="draftChip(post)" />
               </v-card-text>
 
               <v-list-item three-line style="min-height: unset;">
@@ -44,12 +61,34 @@
                 </v-list-item-subtitle>
               </v-list-item>
 
+              <v-card-text>
+                <template v-if="post.fields.tags">
+                  <v-chip
+                    v-for="(tag) in post.fields.tags"
+                    :key="tag.sys.id"
+                    :to="linkTo('tags', tag)"
+                    small
+                    label
+                    outlined
+                    class="ma-1"
+                  >
+                    <v-icon
+                      left
+                      size="18"
+                      color="grey"
+                    >
+                      mdi-label
+                    </v-icon>
+                    {{ tag.fields.name }}
+                  </v-chip>
+                </template>
+              </v-card-text>
               <v-card-actions>
                 <v-spacer />
                 <v-btn
                   text
                   color="primary"
-                  :to="linkTo(post)"
+                  :to="linkTo('posts', post)"
                 >
                   この記事をみる
                 </v-btn>
@@ -67,7 +106,8 @@
 
 <script>
 import client from '~/plugins/contentful'
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
+import draftChip from '~/components/posts/draftChip'
 
 export default {
   async asyncData({ env }) {
@@ -78,13 +118,19 @@ export default {
     }).then(res => (posts = res.items)).catch(console.error)
     return { posts }
   },
+  components: {
+    draftChip
+  },
   computed: {
-    ...mapGetters(['setEyeCatch']),
-    linkTo: () => (obj) => {
-      return {
-        name: 'posts-slug',
-        params: {
-          slug: obj.fields.slug
+    ...mapState(['posts']),  
+    ...mapGetters(['setEyeCatch', 'draftChip', 'linkTo']),
+    categoryColor() {
+      return (category) => {
+        switch (category.fields.name) {
+          case 'programming': return '#C73A31'
+          case 'eating': return '#236244'
+          case 'training': return 'primary'
+          default: return 'grey darken-3'
         }
       }
     }

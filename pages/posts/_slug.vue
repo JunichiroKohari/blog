@@ -1,16 +1,17 @@
 <template>
   <v-container fluid>
     <template v-if="currentPost">
+      <breadcrumbs :add-items="addBreads" />
       {{ currentPost.fields.title }}
-      <v-img
+      <!-- <v-img
         :src="currentPost.fields.image.fields.file.url"
         :alt="currentPost.fields.image.fields.title"
         :aspect-ratio="16/9"
         width="700"
         height="400"
         class="mx-auto"
-      />
-      {{ currentPost.fields.publishDate }}<br>
+      /> -->
+      {{currentPost.fields.publishDate}}
       {{ currentPost.fields.body }}
     </template>
 
@@ -34,17 +35,32 @@
 </template>
 
 <script>
-import client from '~/plugins/contentful'
+import { mapGetters } from 'vuex'
 
 export default {
-  async asyncData({ env, params }) {
-    let currentPost = null
-    await client.getEntries({
-      content_type: env.CTF_BLOG_POST_TYPE_ID,
-      'fields.slug': params.slug
-    }).then(res => (currentPost = res.items[0])).catch(console.error)
+  computed: {
+    ...mapGetters(['setEyeCatch', 'linkTo']),
+    addBreads() {
+      return [
+        {
+          icon: 'mdi-folder-outline',
+          text: this.category.fields.name,
+          to: this.linkTo('categories', this.category)
+        }
+      ]
+    }
+  },
+  async asyncData({ payload, store, params, error }) {
+    const currentPost = payload || await store.state.posts.find(post => post.fields.slug === params.slug)
 
-    return { currentPost }
+    if (currentPost) {
+      return {
+        currentPost,
+        category: currentPost.fields.category
+      }
+    } else {
+      return error({ statusCode: 400 })
+    }
   }
 }
 </script>

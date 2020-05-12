@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
-require('dotenv').config();
+require('dotenv').config()
+const client = require('./plugins/contentful').default
 
 export default {
   mode: 'universal',
@@ -31,8 +32,17 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    'plugins/contentful'
+    'plugins/contentful',
+    'plugins/components'
   ],
+  /*
+  ** Nuxt.js middleware
+  */
+  router: {
+    middleware: [
+      'getContentful'
+    ]
+  },
   /*
   ** Nuxt.js dev-modules
   */
@@ -50,6 +60,33 @@ export default {
     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
     CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
     CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN
+  },
+  generate: {
+    routes() {
+      return Promise.all([
+        client.getEntries({
+          content_type: process.env.CTF_BLOG_POST_TYPE_ID
+        }),
+        client.getEntries({
+          content_type: 'category'
+        }),
+        client.getEntries({
+          content_type: 'tag'
+        })
+      ]).then(([posts, categories, tags]) => {
+        return [
+          ...posts.items.map((post) => {
+            return { route: `posts/${post.fields.slug}`, payload: post }
+          }),
+          ...categories.items.map((category) => {
+            return { route: `categories/${category.fields.slug}`, payload: category }
+          }),
+          ...tags.items.map((tag) => {
+            return { route: `tags/${tag.fields.slug}`, payload: tag }
+          })
+        ]
+      })
+    }
   },
   /*
   ** vuetify module configuration
