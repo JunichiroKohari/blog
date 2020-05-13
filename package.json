@@ -1,7 +1,7 @@
 {
-  "name": "blog",
+  "name": "休みの日何してる？",
   "version": "1.0.0",
-  "description": "my blog",
+  "description": "休みの日にやってることを書いていきます。",
   "author": "JunichiroKohari",
   "private": true,
   "scripts": {
