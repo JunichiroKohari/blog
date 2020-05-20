@@ -1,5 +1,5 @@
 {
-  "name": "俺を支える技術",
+  "name": "blog",
   "version": "1.0.0",
   "description": "休みの日にやってることを書いていきます。",
   "author": "JunichiroKohari",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "contentful": "^7.14.4",
+    "minimasonry": "^1.1.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

@@ -1,8 +1,6 @@
 <template>
   <v-container fluid>
-    <v-row
-      justify="center"
-    >
+    <v-row dense>
       <v-col
         cols="12"
         sm="11"
