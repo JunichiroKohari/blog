@@ -5,11 +5,11 @@
       color="light-blue lighten-2"
       dark
       hide-on-scroll
-      prominent
       scroll-target="#scrolling-techniques-4"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
+      <v-toolbar-title>Title🙍‍♂️</v-toolbar-title>
 
       <v-spacer></v-spacer>
 

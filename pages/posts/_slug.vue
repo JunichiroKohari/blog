@@ -1,36 +1,38 @@
 <template>
   <v-container fluid>
-    <template v-if="currentPost">
-      <breadcrumbs :add-items="addBreads" />
-      {{ currentPost.fields.title }}
-      <!-- <v-img
-        :src="currentPost.fields.image.fields.file.url"
-        :alt="currentPost.fields.image.fields.title"
-        :aspect-ratio="16/9"
-        width="700"
-        height="400"
-        class="mx-auto"
-      /> -->
-      {{currentPost.fields.publishDate}}
-      {{ currentPost.fields.body }}
-    </template>
+    <v-row align="center" justify="center">
+      <template v-if="currentPost">
+        <breadcrumbs :add-items="addBreads" />
+        {{ currentPost.fields.title }}
+        <!-- <v-img
+          :src="currentPost.fields.image.fields.file.url"
+          :alt="currentPost.fields.image.fields.title"
+          :aspect-ratio="16/9"
+          width="700"
+          height="400"
+          class="mx-auto"
+        /> -->
+        {{currentPost.fields.publishDate}}
+        {{ currentPost.fields.body }}
+      </template>
 
-    <template v-else>
-      お探しの記事は見つかりませんでした。
-    </template>
+      <template v-else>
+        お探しの記事は見つかりませんでした。
+      </template>
 
-    <div>
-      <v-btn
-        outlined
-        color="primary"
-        to="/"
-      >
-        <v-icon size="16">
-          fas fa-angle-double-left
-        </v-icon>
-        <span class="ml-1">ホームへ戻る</span>
-      </v-btn>
-    </div>
+      <div>
+        <v-btn
+          outlined
+          color="primary"
+          to="/"
+        >
+          <v-icon size="16">
+            fas fa-angle-double-left
+          </v-icon>
+          <span class="ml-1">ホームへ戻る</span>
+        </v-btn>
+      </div>
+    </v-row>
   </v-container>
 </template>
 
