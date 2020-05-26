@@ -21,20 +21,6 @@
     <template v-else>
       お探しの記事は見つかりませんでした。
     </template>
-    <v-row align="center" justify="center">
-      <div>
-        <v-btn
-          outlined
-          color="primary"
-          to="/"
-        >
-          <v-icon size="16">
-            fas fa-angle-double-left
-          </v-icon>
-          <span class="ml-1">ホームへ戻る</span>
-        </v-btn>
-      </div>
-    </v-row>
   </v-container>
 </template>
 
