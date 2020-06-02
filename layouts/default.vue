@@ -1,9 +1,15 @@
 <template>
   <v-app>
+    <customHeader />
     <nuxt />
   </v-app>
 </template>
 
 <script>
-export default {}
+import customHeader from '~/components/ui/custom-header'
+export default {
+  components: {
+    customHeader
+  }
+}
 </script>
