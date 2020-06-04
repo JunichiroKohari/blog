@@ -8,6 +8,7 @@
 import client from '~/plugins/contentful'
 import { mapState, mapGetters } from 'vuex'
 import blogCard from '~/components/ui/blog-card'
+import contributionGraph from '~/components/ui/contribution-graph'
 import draftChip from '~/components/posts/draftChip'
 
 export default {
@@ -21,6 +22,7 @@ export default {
   },
   components: {
     blogCard,
+    contributionGraph,
     draftChip
   },
   computed: {

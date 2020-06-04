@@ -15,7 +15,7 @@
     background: fuchsia;
 }
 .blog-title {
-    font-size: 7rem;
+    font-size: 3rem;
     letter-spacing: 0.2rem;
 }
 </style>
