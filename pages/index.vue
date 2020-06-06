@@ -1,6 +1,8 @@
 <template>
 <div>
   <span>hello</span>
+  <contributionGraph />
+  <menuBtn />
 </div>
 </template>
 
@@ -10,6 +12,7 @@ import { mapState, mapGetters } from 'vuex'
 import blogCard from '~/components/ui/blog-card'
 import contributionGraph from '~/components/ui/contribution-graph'
 import draftChip from '~/components/posts/draftChip'
+import menuBtn from '~/components/ui/menu-btn'
 
 export default {
   async asyncData({ env }) {
@@ -23,7 +26,8 @@ export default {
   components: {
     blogCard,
     contributionGraph,
-    draftChip
+    draftChip,
+    menuBtn
   },
   computed: {
     ...mapState(['posts']),  
