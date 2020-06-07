@@ -49,24 +49,23 @@ export default {
   background: #8ecdf5;
 }
 .contents {
+  position: relative;
   height: 81vh;
   margin: 10%;
   margin-top: 5.8rem;
   border-radius: 2em;
   background: floralwhite;
 }
-.contents:before {
-  content: '';
+.contents::before, .contents::after {
   position: absolute;
-  display: block;
-  width: 0;
-  height: 0;
-  right: 2px;
-  bottom: 2px;
-  border-left: 20px solid floralwhite;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  transform: rotate(45deg);
+  content: '';
+}
+.contents::before {
+  bottom: .25em; left: 1.25em;
+  border: solid 0 transparent;
+  border-right: solid 3.5em floralwhite;
+  width: 0; height: 1em;
+  transform: rotate(45deg) skewX(75deg);
 }
 
 @media screen and (max-width: 768px) {
