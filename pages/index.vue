@@ -61,17 +61,31 @@ export default {
   content: '';
 }
 .contents::before {
-  bottom: .25em; left: 1.25em;
+  bottom: .25em; right: 0;
   border: solid 0 transparent;
-  border-right: solid 3.5em floralwhite;
+  border-right: solid 14.5em floralwhite;
   width: 0; height: 1em;
-  transform: rotate(45deg) skewX(75deg);
+  transform: rotate(10deg) skewX(80deg);
 }
-
+@media screen and (max-width: 1199px) {
+    .contents::before {
+      right: 3em;
+    }
+}
 @media screen and (max-width: 768px) {
     .contents {
       height: 85vh;
       margin-top: 3.5rem;
+    }
+    .contents::before {
+      right: 5em;
+    }
+}
+@media screen and (max-width: 449px) {
+    .contents::before {
+      height: 0.8em;
+      border-right: solid 8.5em floralwhite;
+      transform: rotate(10deg) skewX(70deg);
     }
 }
 </style>
