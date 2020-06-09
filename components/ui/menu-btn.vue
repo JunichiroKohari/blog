@@ -1,10 +1,20 @@
 <template>
     <div class="menu-btn">
-        <a href="#" class="face-btn">
+        <a href="#" class="face-btn" @click="hello">
             <img src="../../assets/images/face1.png" alt="メニューボタン" class="faceBtn-img">
         </a>
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        hello: () => {
+            alert("hello");
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 .menu-btn {
