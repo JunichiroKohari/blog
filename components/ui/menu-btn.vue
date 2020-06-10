@@ -1,6 +1,6 @@
 <template>
     <div class="menu-btn">
-        <a href="#" class="face-btn" @click="hello">
+        <a href="#" class="face-btn" @click="showMenu">
             <img src="../../assets/images/face1.png" alt="メニューボタン" class="faceBtn-img">
         </a>
     </div>
@@ -9,8 +9,12 @@
 <script>
 export default {
     methods: {
-        hello: () => {
-            alert("hello");
+        showMenu: () => {
+            if (!$('.contents').hasClass('menu-bubble')) {
+                $('.contents').addClass('menu-bubble');
+            } else {
+                $('.contents').removeClass('menu-bubble');
+            }
         }
     }
 }

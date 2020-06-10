@@ -1,7 +1,14 @@
 <template>
 <div class="contents-wrapper">
   <div class="contents">
-    <span>hello, guys</span>
+    <template v-if="posts.length">
+      <span>hello, guys</span>
+      <div v-for="post in posts" :key="post.title">
+      </div>
+    </template>
+    <template v-else>
+      <span>お探しの記事はありません。</span>
+    </template>
   </div>
 </div>
 </template>
@@ -9,7 +16,6 @@
 <script>
 import client from '~/plugins/contentful'
 import { mapState, mapGetters } from 'vuex'
-import blogCard from '~/components/ui/blog-card'
 import contributionGraph from '~/components/ui/contribution-graph'
 import draftChip from '~/components/posts/draftChip'
 
@@ -23,7 +29,6 @@ export default {
     return { posts }
   },
   components: {
-    blogCard,
     contributionGraph,
     draftChip,
   },
@@ -56,11 +61,11 @@ export default {
   border-radius: 2em;
   background: floralwhite;
 }
-.contents::before, .contents::after {
+.menu-bubble::before, .menu-bubble::after {
   position: absolute;
   content: '';
 }
-.contents::before {
+.menu-bubble::before {
   bottom: .25em; right: 0;
   border: solid 0 transparent;
   border-right: solid 14.5em floralwhite;
@@ -68,21 +73,21 @@ export default {
   transform: rotate(10deg) skewX(80deg);
 }
 @media screen and (max-width: 1199px) {
-    .contents::before {
+    .menu-bubble::before {
       right: 3em;
     }
 }
 @media screen and (max-width: 768px) {
-    .contents {
+    .menu-bubble {
       height: 85vh;
       margin-top: 3.5rem;
     }
-    .contents::before {
+    .menu-bubble::before {
       right: 5em;
     }
 }
 @media screen and (max-width: 449px) {
-    .contents::before {
+    .menu-bubble::before {
       height: 0.8em;
       border-right: solid 8.5em floralwhite;
       transform: rotate(10deg) skewX(70deg);
