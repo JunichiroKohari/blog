@@ -3,8 +3,9 @@
   <div class="contents">
     <template v-if="posts.length">
       <span>hello, guys</span>
-      <div v-for="post in posts" :key="post.title">
-      </div>
+      <a v-for="(post, i) in posts" :key="i">
+        <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" width="300px" height="200px">
+      </a>
     </template>
     <template v-else>
       <span>お探しの記事はありません。</span>
