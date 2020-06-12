@@ -56,8 +56,7 @@ export default {
 }
 .contents {
   position: relative;
-  height: 81vh;
-  margin: 10%;
+  margin: 2%;
   margin-top: 5.8rem;
   border-radius: 2em;
   background: floralwhite;
@@ -79,8 +78,7 @@ export default {
     }
 }
 @media screen and (max-width: 768px) {
-    .menu-bubble {
-      height: 85vh;
+    .contents {
       margin-top: 3.5rem;
     }
     .menu-bubble::before {
