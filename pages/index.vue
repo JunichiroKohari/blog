@@ -2,9 +2,10 @@
 <div class="contents-wrapper">
   <div class="contents">
     <template v-if="posts.length">
-      <span>hello, guys</span>
-      <a v-for="(post, i) in posts" :key="i">
-        <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" width="300px" height="200px">
+      <a v-for="(post, i) in posts" :key="i" class="article-box">
+        <h3 class="article-title">{{ post.fields.title }}</h3>
+        <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" class="subnail">
+        <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate }}</time>
       </a>
     </template>
     <template v-else>
@@ -57,7 +58,7 @@ export default {
 .contents {
   position: relative;
   margin: 2%;
-  margin-top: 5.8rem;
+  margin-top: 4.5rem;
   border-radius: 2em;
   background: floralwhite;
 }
@@ -91,5 +92,30 @@ export default {
       border-right: solid 8.5em floralwhite;
       transform: rotate(10deg) skewX(70deg);
     }
+}
+.article-box {
+  position: relative;
+  display: block;
+  width: 290px;
+  height: 250px;
+  transition: opacity 0.5s;
+}
+.article-box:hover {
+  opacity: 0.8;
+}
+.article-title {
+  position: absolute;;
+  bottom: 24px;
+}
+.subnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+}
+.publishDate {
+  position: absolute;
+  bottom: 0;
 }
 </style>

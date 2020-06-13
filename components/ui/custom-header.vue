@@ -10,7 +10,7 @@
     z-index: 10000;
     top: 0.5rem;
     left: 0.5rem;
-    width: 35rem;
+    width: 26rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-radius: 50px;
