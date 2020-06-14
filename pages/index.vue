@@ -37,16 +37,16 @@ export default {
   computed: {
     ...mapState(['posts']),  
     ...mapGetters(['setEyeCatch', 'draftChip', 'linkTo']),
-    categoryColor() {
-      return (category) => {
-        switch (category.fields.name) {
-          case 'programming': return '#C73A31'
-          case 'eating': return '#236244'
-          case 'training': return 'primary'
-          default: return 'grey darken-3'
-        }
-      }
-    }
+    // categoryColor() {
+    //   return (category) => {
+    //     switch (category.fields.name) {
+    //       case 'programming': return '#C73A31'
+    //       case 'eating': return '#236244'
+    //       case 'training': return 'primary'
+    //       default: return 'grey darken-3'
+    //     }
+    //   }
+    // }
   }
 }
 </script>
