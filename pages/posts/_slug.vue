@@ -1,5 +1,10 @@
 <template>
-  
+<div>
+  <h2>{{ currentPost.fields.title }}</h2>
+  {{ currentPost.fields.publishDate }}<br>
+  {{ currentPost.fields.body }}
+</div>
+
 </template>
 
 <script>
