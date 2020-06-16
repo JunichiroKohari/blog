@@ -1,7 +1,7 @@
 <template>
 <div>
   <h2>{{ currentPost.fields.title }}</h2>
-  {{ currentPost.fields.publishDate }}<br>
+  <time>{{ currentPost.fields.publishDate }}</time><br>
   {{ currentPost.fields.body }}
 </div>
 
