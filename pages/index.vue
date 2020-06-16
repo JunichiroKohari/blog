@@ -57,41 +57,10 @@ export default {
 }
 .contents {
   position: relative;
-  margin: 2%;
+  margin: 20%;
   margin-top: 4.5rem;
   border-radius: 2em;
   background: floralwhite;
-}
-.menu-bubble::before, .menu-bubble::after {
-  position: absolute;
-  content: '';
-}
-.menu-bubble::before {
-  bottom: .25em; right: 0;
-  border: solid 0 transparent;
-  border-right: solid 14.5em floralwhite;
-  width: 0; height: 1em;
-  transform: rotate(10deg) skewX(80deg);
-}
-@media screen and (max-width: 1199px) {
-    .menu-bubble::before {
-      right: 3em;
-    }
-}
-@media screen and (max-width: 768px) {
-    .contents {
-      margin-top: 3.5rem;
-    }
-    .menu-bubble::before {
-      right: 5em;
-    }
-}
-@media screen and (max-width: 449px) {
-    .menu-bubble::before {
-      height: 0.8em;
-      border-right: solid 8.5em floralwhite;
-      transform: rotate(10deg) skewX(70deg);
-    }
 }
 .article-box {
   position: relative;

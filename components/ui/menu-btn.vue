@@ -10,11 +10,7 @@
 export default {
     methods: {
         showMenu: () => {
-            if (!$('.contents').hasClass('menu-bubble')) {
-                $('.contents').addClass('menu-bubble');
-            } else {
-                $('.contents').removeClass('menu-bubble');
-            }
+            
         }
     }
 }
