@@ -1,9 +1,9 @@
 <template>
-<div>
+<section>
   <h2>{{ currentPost.fields.title }}</h2>
   <time>{{ currentPost.fields.publishDate }}</time><br>
   {{ currentPost.fields.body }}
-</div>
+</section>
 
 </template>
 
