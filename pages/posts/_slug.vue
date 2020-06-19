@@ -1,5 +1,5 @@
 <template>
-<section>
+<section class="article">
   <h2>{{ currentPost.fields.title }}</h2>
   <time>{{ currentPost.fields.publishDate }}</time><br>
   {{ currentPost.fields.body }}
