@@ -1,16 +1,22 @@
 <template>
     <header class="l-header">
-        <h1 class="blog-title"><img src="../../assets/images/blog-title.png" alt="リーダブルブログ" class="logo"></h1>
+        <div class="title-area">
+            <h1 class="blog-title"><img src="../../assets/images/blog-title.png" alt="リーダブルブログ" class="logo"></h1>
+        </div>
     </header>
 </template>
 
 <style scoped>
 .l-header {
     position: fixed;
+    top: 0.55em;
+    left: calc(50% - 25em / 2);
     z-index: 10000;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 26rem;
+    display: flex;
+    align-items: center;
+    width: 25em;
+}
+.title-area {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-radius: 50px;
@@ -27,7 +33,8 @@
 }
 @media screen and (max-width: 768px) {
     .l-header {
-        width: 18rem;
+    left: calc(50% - 20em / 2);
+    width: 20em;
     }
 }
 </style>
