@@ -2,11 +2,11 @@
 <div class="contents-wrapper">
   <div class="contents">
     <template v-if="posts.length">
-      <a v-for="(post, i) in posts" :key="i" class="article-box">
-        <h3 class="article-title">{{ post.fields.title }}</h3>
+      <div v-for="(post, i) in posts" :key="i" class="article-box">
+        <nuxt-link :to="linkTo('posts', post)"><h3 class="article-title">{{ post.fields.title }}</h3></nuxt-link>
         <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" class="subnail">
         <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate }}</time>
-      </a>
+      </div>
     </template>
     <template v-else>
       <span>お探しの記事はありません。</span>
@@ -20,7 +20,6 @@ import client from '~/plugins/contentful'
 import { mapState, mapGetters } from 'vuex'
 import contributionGraph from '~/components/ui/contribution-graph'
 import draftChip from '~/components/posts/draftChip'
-
 export default {
   async asyncData({ env }) {
     let posts = []
@@ -67,6 +66,9 @@ export default {
   display: block;
   width: 290px;
   height: 250px;
+  border: 1px solid gray;
+  border-radius: 20%;
+  background: cornsilk;
   transition: opacity 0.5s;
 }
 .article-box:hover {
@@ -86,5 +88,10 @@ export default {
 .publishDate {
   position: absolute;
   bottom: 0;
+}
+@media screen and (max-width: 768px) {
+    .contents {
+      margin-top: 3.5em;
+    }
 }
 </style>
