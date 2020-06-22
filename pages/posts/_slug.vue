@@ -1,9 +1,13 @@
 <template>
-<article class="article">
-  <h2>{{ currentPost.fields.title }}</h2>
-  <time>{{ currentPost.fields.publishDate }}</time><br>
-  {{ currentPost.fields.body }}
-</article>
+<div class="contents-wrapper">
+  <div class="contents">
+    <article class="article">
+      <h2>{{ currentPost.fields.title }}</h2>
+      <time>{{ currentPost.fields.publishDate }}</time><br>
+      {{ currentPost.fields.body }}
+    </article>
+  </div>
+</div>
 
 </template>
 
@@ -37,3 +41,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.contents-wrapper {
+  background: #8ecdf5;
+}
+.contents {
+  position: relative;
+  margin: 20%;
+  margin-top: 4.5rem;
+  padding: 2em;
+  border-radius: 2em;
+  background: floralwhite;
+}
+</style>

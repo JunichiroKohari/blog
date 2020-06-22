@@ -5,7 +5,7 @@
       <div v-for="(post, i) in posts" :key="i" class="article-box">
         <nuxt-link :to="linkTo('posts', post)"><h3 class="article-title">{{ post.fields.title }}</h3></nuxt-link>
         <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" class="subnail">
-        <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate }}</time>
+        <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate.substring(0, 10) }}</time>
       </div>
     </template>
     <template v-else>
@@ -58,6 +58,7 @@ export default {
   position: relative;
   margin: 20%;
   margin-top: 4.5rem;
+  padding: 2em;
   border-radius: 2em;
   background: floralwhite;
 }
@@ -66,9 +67,7 @@ export default {
   display: block;
   width: 290px;
   height: 250px;
-  border: 1px solid gray;
-  border-radius: 20%;
-  background: cornsilk;
+  background: #d6efff;
   transition: opacity 0.5s;
 }
 .article-box:hover {
