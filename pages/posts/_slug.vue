@@ -3,7 +3,7 @@
   <div class="contents">
     <article class="article">
       <h2 class="article-title">{{ currentPost.fields.title }}</h2>
-      <time>{{ currentPost.fields.publishDate }}</time><br>
+      <time class="publishDate">{{ currentPost.fields.publishDate }}</time><br>
       {{ currentPost.fields.body }}
     </article>
   </div>
