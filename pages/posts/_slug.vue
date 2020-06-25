@@ -4,7 +4,9 @@
     <article class="article">
       <h2 class="article-title">{{ currentPost.fields.title }}</h2>
       <time class="publishDate">{{ currentPost.fields.publishDate }}</time><br>
-      {{ currentPost.fields.body }}
+      <section>
+        {{ currentPost.fields.body }}
+      </section>
     </article>
   </div>
 </div>
