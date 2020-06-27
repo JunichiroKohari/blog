@@ -3,9 +3,10 @@
   <div class="contents">
     <template v-if="posts.length">
       <div v-for="(post, i) in posts" :key="i" class="article-box">
-        <nuxt-link :to="linkTo('posts', post)"><h3 class="article-title">{{ post.fields.title }}</h3></nuxt-link>
-        <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" class="subnail">
-        <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate.substring(0, 10) }}</time>
+          <nuxt-link :to="linkTo('posts', post)" class="article-link"></nuxt-link>
+          <h3 class="article-title">{{ post.fields.title }}</h3>
+          <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" class="subnail">
+          <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate.substring(0, 10) }}</time>          
       </div>
     </template>
     <template v-else>
@@ -47,6 +48,15 @@ export default {
     //     }
     //   }
     // }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      console.log('hello!');
+      $('article-box').each(function(index, element){
+        var w = $(element).width()
+        $('.contents').append('<div style="height:0; width:'+ w +'px; margin:0;"></div>')
+      })
+    })
   }
 }
 </script>
@@ -73,14 +83,26 @@ export default {
   height: 250px;
   margin: .6em;
   background: #d6efff;
+  box-shadow:4px 4px 6px -2px #b2b2b2;
   transition: opacity 0.5s;
+  &:hover {
+  opacity: 0.7;
+  }
 }
-.article-box:hover {
-  opacity: 0.8;
-}
+
 .article-title {
   position: absolute;;
   bottom: 24px;
+  width: 290px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: .04em;
+  font-feature-settings: "palt" 1;
+  -webkit-font-feature-settings: "palt" 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .subnail {
   position: absolute;
@@ -92,6 +114,14 @@ export default {
 .publishDate {
   position: absolute;
   bottom: 0;
+  font-size: 13px;
+}
+.article-link {
+  display: block;
+  position: absolute;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  z-index: 1;
 }
 @media screen and (max-width: 768px) {
     .contents {
