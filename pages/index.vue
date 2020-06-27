@@ -20,6 +20,7 @@ import client from '~/plugins/contentful'
 import { mapState, mapGetters } from 'vuex'
 import contributionGraph from '~/components/ui/contribution-graph'
 import draftChip from '~/components/posts/draftChip'
+
 export default {
   async asyncData({ env }) {
     let posts = []
@@ -55,8 +56,11 @@ export default {
   background: #8ecdf5;
 }
 .contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   position: relative;
-  margin: 20%;
+  margin: 10%;
   margin-top: 4.5rem;
   padding: 2em;
   border-radius: 2em;
@@ -67,6 +71,7 @@ export default {
   display: block;
   width: 290px;
   height: 250px;
+  margin: .6em;
   background: #d6efff;
   transition: opacity 0.5s;
 }
