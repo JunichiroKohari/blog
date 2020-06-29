@@ -56,4 +56,11 @@ export default {
   border-radius: 2em;
   background: floralwhite;
 }
+.article-title {
+  color: #170de7;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  font-feature-settings: "palt" 1;
+}
 </style>

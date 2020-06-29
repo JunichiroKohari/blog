@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contents-wrapper {
   background: #8ecdf5;
 }
@@ -82,6 +82,8 @@ export default {
   width: 290px;
   height: 250px;
   margin: .6em;
+  padding-left: .7em;
+  border-radius: 5px;
   background: #d6efff;
   box-shadow:4px 4px 6px -2px #b2b2b2;
   transition: opacity 0.5s;
@@ -92,9 +94,10 @@ export default {
 
 .article-title {
   position: absolute;;
-  bottom: 24px;
+  bottom: 26px;
   width: 290px;
-  font-size: 16px;
+  color: #170de7;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: .04em;
@@ -106,14 +109,14 @@ export default {
 }
 .subnail {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80%;
+  top: 7px;
+  left: 7.4px;
+  width: 95%;
+  height: 75%;
 }
 .publishDate {
   position: absolute;
-  bottom: 0;
+  bottom: 4px;
   font-size: 13px;
 }
 .article-link {
