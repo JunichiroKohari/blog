@@ -1,5 +1,7 @@
 <template>
-    
+    <footer class="footer">
+        <small class="copyright"></small>
+    </footer>
 </template>
 
 <script>
