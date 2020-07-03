@@ -14,4 +14,7 @@ export default {
 .footer {
     position: absolute;
 }
+.copyright {
+    
+}
 </style>
