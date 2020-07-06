@@ -16,6 +16,7 @@ export default {
     bottom: 0;
     left: 0;
     height: 5em;
+    background: cornflowerblue;
 }
 .copyright {
 
