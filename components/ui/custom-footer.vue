@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        <small class="copyright"></small>
+        <small class="copyright">© 2020 readable blog</small>
     </footer>
 </template>
 
