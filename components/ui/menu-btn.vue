@@ -22,7 +22,7 @@ export default {
     bottom: 4.5rem;
     right: 4rem;
     width: 3rem;
-
+    z-index: 1;
 }
 .face-btn {
     display: flex;
