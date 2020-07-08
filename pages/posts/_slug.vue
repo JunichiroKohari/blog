@@ -45,9 +45,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contents-wrapper {
-  background: #8ecdf5;
-}
 .contents {
   position: relative;
   margin: 20%;

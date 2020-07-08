@@ -62,16 +62,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contents-wrapper {
-  background: #8ecdf5;
-}
 .contents {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  margin: 10%;
-  margin-top: 4.5rem;
+  margin: 4.5rem 10% 13rem 10%;
   padding: 2em;
   border-radius: 2em;
   background: floralwhite;
