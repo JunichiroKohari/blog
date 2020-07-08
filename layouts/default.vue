@@ -3,6 +3,7 @@
     <customHeader />
     <nuxt />
     <menuBtn />
+    <customFooter />
   </v-app>
 </template>
 
