@@ -19,6 +19,6 @@ export default {
     background: cornflowerblue;
 }
 .copyright {
-
+    
 }
 </style>
