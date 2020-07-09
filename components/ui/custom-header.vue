@@ -1,7 +1,11 @@
 <template>
     <header class="l-header">
         <div class="title-area">
-            <h1 class="blog-title"><img src="../../assets/images/blog-title.png" alt="リーダブルブログ" class="logo"></h1>
+            <h1 class="blog-title">
+                <nuxt-link to="/">
+                    <img src="../../assets/images/blog-title.png" alt="リーダブルブログ" class="logo">
+                </nuxt-link>
+            </h1>
         </div>
     </header>
 </template>
