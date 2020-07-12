@@ -1,6 +1,6 @@
 <template>
-    <select multiple data-placeholder="Add tools">
-        <option>Sketch</option>
+    <select multiple>
+        <option>テスト１</option>
         <option selected>Framer X</option>
         <option>Photoshop</option>
         <option>Principle</option>

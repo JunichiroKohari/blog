@@ -1,16 +1,23 @@
 <template>
     <div class="menu-btn">
-        <a href="#" class="face-btn" @click="showMenu">
-            <img src="../../assets/images/face1.png" alt="メニューボタン" class="faceBtn-img">
+        <a href="" class="face-btn" @click="showMenu">
+            <img :src="src" alt="メニューボタン" class="faceBtn-img">
         </a>
     </div>
 </template>
 
 <script>
 export default {
+    data: () => {
+        return {
+            src: '_nuxt/assets/images/face1.png'
+        }
+    },
+    // async asyncData(context) {
+    //     return{ src: '../../assets/images/face1.png' }
+    // },
     methods: {
         showMenu: () => {
-            
         }
     }
 }
