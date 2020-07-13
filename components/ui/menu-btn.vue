@@ -10,7 +10,7 @@
 export default {
     data: () => {
         return {
-            src: '_nuxt/assets/images/face1.png'
+            src: require('@/assets/images/face1.png')
         }
     },
     // async asyncData(context) {
