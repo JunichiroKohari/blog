@@ -17,7 +17,8 @@ export default {
     //     return{ src: '../../assets/images/face1.png' }
     // },
     methods: {
-        showMenu: () => {
+        showMenu() {
+            this.src = require('@/assets/images/face2.png');
         }
     }
 }
