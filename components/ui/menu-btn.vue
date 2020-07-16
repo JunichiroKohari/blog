@@ -13,12 +13,10 @@ export default {
             src: require('@/assets/images/face1.png')
         }
     },
-    // async asyncData(context) {
-    //     return{ src: '../../assets/images/face1.png' }
-    // },
     methods: {
-        showMenu() {
-            this.src = require('@/assets/images/face2.png');
+        async showMenu() {
+            alert('helo');
+            // this.src = require('@/assets/images/face2.png');
         }
     }
 }
