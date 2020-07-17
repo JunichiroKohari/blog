@@ -3,7 +3,8 @@ import client from '~/plugins/contentful'
 
 export const state = () => ({
     posts: [],
-    categories: []
+    categories: [],
+    faceBtn: require('@/assets/images/face1.png'),
 })
 
 export const getters = {
