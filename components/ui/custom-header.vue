@@ -7,6 +7,11 @@
                 </nuxt-link>
             </h1>
         </div>
+        <select name="hoge" id="hoge">
+            <option value="a">test</option>
+            <option value="a">test</option>
+            <option value="a">test</option>
+        </select>
     </header>
 </template>
 
@@ -40,5 +45,10 @@
     left: calc(50% - 20em / 2);
     width: 20em;
     }
+}
+select {
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
 }
 </style>

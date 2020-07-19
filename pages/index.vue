@@ -8,11 +8,13 @@
           <img :src="post.fields.image.fields.file.url" :alt="post.fields.image.fields.title" class="subnail">
           <time :datetime="post.fields.publishDate" class="publishDate">{{ post.fields.publishDate.substring(0, 10) }}</time>          
       </div>
+      <button @click="hello">hello</button>
     </template>
     <template v-else>
       <span>お探しの記事はありません。</span>
     </template>
   </div>
+  <menuBtn />
 </div>
 </template>
 
@@ -21,6 +23,7 @@ import client from '~/plugins/contentful'
 import { mapState, mapGetters } from 'vuex'
 import contributionGraph from '~/components/ui/contribution-graph'
 import draftChip from '~/components/posts/draftChip'
+import menuBtn from '~/components/ui/menu-btn'
 
 export default {
   async asyncData({ env }) {
@@ -34,6 +37,7 @@ export default {
   components: {
     contributionGraph,
     draftChip,
+    menuBtn
   },
   computed: {
     ...mapState(['posts']),  
@@ -48,6 +52,11 @@ export default {
     //     }
     //   }
     // }
+  },
+  methods: {
+    hello: () => {
+      alert('hello');
+    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -70,7 +79,7 @@ export default {
   margin: 4.5rem 10% 13rem 10%;
   padding: 2em;
   border-radius: 2em;
-  background: floralwhite;
+  background: transparent;
 }
 .article-box {
   position: relative;
@@ -80,7 +89,7 @@ export default {
   margin: .6em;
   padding-left: .7em;
   border-radius: 5px;
-  background: #d6efff;
+  background: linen;
   box-shadow:4px 4px 6px -2px #b2b2b2;
   transition: opacity 0.5s;
   &:hover {
