@@ -15,5 +15,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
+select {
+    display: block;
+    padding: 5px;
+    border: 1px solid black;
+}
 </style>
