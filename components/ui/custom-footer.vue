@@ -21,7 +21,7 @@ export default {
     width: 100%;
     height: 8em;
     padding: 1em;
-    background: #a9c8ff;
+    background: #b3d0ff;
 }
 .copyright {
     
