@@ -35,7 +35,7 @@
     debug "^4.1.0"
     gensync "^1.0.0-beta.1"
     json5 "^2.1.2"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     resolve "^1.3.2"
     semver "^5.4.1"
     source-map "^0.5.0"
@@ -47,7 +47,7 @@
   dependencies:
     "@babel/types" "^7.9.5"
     jsesc "^2.5.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     source-map "^0.5.0"
 
 "@babel/helper-annotate-as-pure@^7.8.3":
@@ -104,7 +104,7 @@
   dependencies:
     "@babel/helper-function-name" "^7.8.3"
     "@babel/types" "^7.8.3"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-explode-assignable-expression@^7.8.3":
   version "7.8.3"
@@ -162,7 +162,7 @@
     "@babel/helper-split-export-declaration" "^7.8.3"
     "@babel/template" "^7.8.6"
     "@babel/types" "^7.9.0"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-optimise-call-expression@^7.8.3":
   version "7.8.3"
@@ -181,7 +181,7 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-regex/-/helper-regex-7.8.3.tgz#139772607d51b93f23effe72105b319d2a4c6965"
   integrity sha512-BWt0QtYv/cg/NecOAZMdcn/waj/5P26DR4mVLXfFtDokSR6fyuG0Pj+e2FqtSME+MqED1khnSMulkmGl8qWiUQ==
   dependencies:
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-remap-async-to-generator@^7.8.3":
   version "7.8.3"
@@ -454,7 +454,7 @@
   integrity sha512-pGnYfm7RNRgYRi7bids5bHluENHqJhrV4bCZRwc5GamaWIIs07N4rZECcmJL6ZClwjDz1GbdMZFtPs27hTB06w==
   dependencies:
     "@babel/helper-plugin-utils" "^7.8.3"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/plugin-transform-classes@^7.9.5":
   version "7.9.5"
@@ -785,7 +785,7 @@
     "@babel/types" "^7.9.5"
     debug "^4.1.0"
     globals "^11.1.0"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/types@^7.4.4", "@babel/types@^7.8.3", "@babel/types@^7.8.6", "@babel/types@^7.9.0", "@babel/types@^7.9.5":
   version "7.9.5"
@@ -793,7 +793,7 @@
   integrity sha512-XjnvNqenk818r5zMaba+sLQjnbda31UfUURv3ei0qPQw4u+j2jMyJ5b11y8ZHYTRSI3NnInQkkkRT4fLqqPdHg==
   dependencies:
     "@babel/helper-validator-identifier" "^7.9.5"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
 "@csstools/convert-colors@^1.4.0":
@@ -832,7 +832,7 @@
     glob "^7.1.6"
     hash-sum "^2.0.0"
     ignore "^5.1.4"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     pify "^4.0.1"
     semver "^7.1.3"
     serialize-javascript "^3.0.0"
@@ -2365,14 +2365,14 @@ contentful-resolve-response@^1.1.4:
   resolved "https://registry.yarnpkg.com/contentful-resolve-response/-/contentful-resolve-response-1.1.4.tgz#9eb656876eecb2cd00444f0adf26bd91a5ec1992"
   integrity sha512-oFq6n6zjbiwD9/7mBa8YHPwvPM0B0D4uOgg1n/rVzpQPhCrzeIixNj6fbJAbDiJt05rZqxiY3K1Db7pPRhRaZw==
   dependencies:
-    lodash "^4.17.4"
+    lodash "^4.17.9"
 
 contentful-sdk-core@^6.4.5:
   version "6.4.5"
   resolved "https://registry.yarnpkg.com/contentful-sdk-core/-/contentful-sdk-core-6.4.5.tgz#e73f4c5426f354608543fc73e46c17c6730180e9"
   integrity sha512-rygNuiwbG6UKrJg6EDlaKewayTeLWrjA2wJwVmq7rV/DYo0cic6t28y0EMhRQ4pgJDV5HyUQFoFeBm2lwLfG2Q==
   dependencies:
-    lodash "^4.17.10"
+    lodash "^4.17.19"
     qs "^6.5.2"
 
 contentful@^7.14.4:
@@ -2384,7 +2384,7 @@ contentful@^7.14.4:
     contentful-resolve-response "^1.1.4"
     contentful-sdk-core "^6.4.5"
     json-stringify-safe "^5.0.1"
-    lodash "^4.17.11"
+    lodash "^4.17.19"
 
 convert-source-map@^1.7.0:
   version "1.7.0"
@@ -3666,7 +3666,7 @@ hard-source-webpack-plugin@^0.13.1:
     chalk "^2.4.1"
     find-cache-dir "^2.0.0"
     graceful-fs "^4.1.11"
-    lodash "^4.15.0"
+    lodash "^4.17.19"
     mkdirp "^0.5.1"
     node-object-hash "^1.2.0"
     parse-json "^4.0.0"
@@ -3855,7 +3855,7 @@ html-webpack-plugin@^3.2.0:
   dependencies:
     html-minifier "^3.2.3"
     loader-utils "^0.2.16"
-    lodash "^4.17.3"
+    lodash "^4.17.19"
     pretty-error "^2.0.2"
     tapable "^1.0.0"
     toposort "^1.0.0"
@@ -4452,7 +4452,7 @@ last-call-webpack-plugin@^3.0.0:
   resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
   integrity sha512-7KI2l2GIZa9p2spzPIVZBYyNKkN+e/SQPpnjlTiPhdbDW3F86tdKKELxKpzJ5sgU19wQWsACULZmpTPYHeWO5w==
   dependencies:
-    lodash "^4.17.5"
+    lodash "^4.17.19"
     webpack-sources "^1.1.0"
 
 launch-editor-middleware@^2.2.1:
@@ -7892,7 +7892,7 @@ webpack-bundle-analyzer@^3.6.1:
     express "^4.16.3"
     filesize "^3.6.1"
     gzip-size "^5.0.0"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     mkdirp "^0.5.1"
     opener "^1.5.1"
     ws "^6.0.0"
