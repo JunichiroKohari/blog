@@ -72,8 +72,9 @@ export default {
 
 <style lang="scss" scoped>
 .contents {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-auto-rows: 260px;
+  grid-template-columns: repeat(auto-fill, 300px);
   justify-content: center;
   position: relative;
   margin: 4.5rem 10% 13rem 10%;
