@@ -5,7 +5,8 @@
       <h2 class="article-title">{{ currentPost.fields.title }}</h2>
       <time class="publishDate">{{ currentPost.fields.publishDate }}</time><br>
       <section class="article-body">
-        {{ currentPost.fields.body }}
+        <!-- {{ currentPost.fields.body }} -->
+        <div class="post-content" v-html="$md.render(currentPost.fields.body)"></div>
       </section>
     </article>
   </div>
@@ -55,7 +56,7 @@ export default {
 }
 .article-title {
   color: #170de7;
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 700;
   letter-spacing: .04em;
   font-feature-settings: "palt" 1;
