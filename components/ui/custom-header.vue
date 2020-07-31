@@ -2,7 +2,7 @@
     <header class="l-header">
         <div class="title-area">
             <h1 class="blog-title">
-                <nuxt-link to="/">
+                <nuxt-link to="/" class="link-to-top">
                     <img src="../../assets/images/blog-title.png" alt="リーダブルブログ" class="logo">
                 </nuxt-link>
             </h1>
@@ -31,6 +31,10 @@
     display: flex;
     font-size: 2rem;
     letter-spacing: 0.2rem;
+}
+.link-to-top {
+    height: 1.6em;
+    padding: 0 .4em;
 }
 .logo {
     width: 100%;
