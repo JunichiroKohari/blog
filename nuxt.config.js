@@ -26,7 +26,6 @@ export default {
   ** Global CSS
   */
   css: [
-    'destyle.css',
     { src: '@/assets/css/common.scss', lang: 'scss' },
   ],
   /*
@@ -45,12 +44,6 @@ export default {
       'getContentful'
     ]
   },
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    '@nuxtjs/vuetify',
-  ],
   /*
   ** Nuxt.js modules
   */
